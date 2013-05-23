@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>HTMLed JavaScript FrameWork by nirus</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>HTMLed JavaScript FrameWork</h1>
+        <p>Light weight javascript framework to convert html pages to locale/Language specific pages on the fly. Written by Niranjan(Nirus)</p>
+
+        <p class="view"><a href="https://github.com/nirus/HTMLed">View the Project on GitHub <small>nirus/HTMLed</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/nirus/HTMLed/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/nirus/HTMLed/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/nirus/HTMLed">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="http://s22.postimg.org/iacur3h35/Logo.jpg" alt="HTMLed Logo"></p>
+
+<h2>HTML + Rendered = HTMLed.js</h2>
+
+<p>This light weight javascript framework converts the HTML pages to language specific pages and renders it to the user on the fly. This works with tokens/Placeholder where the strings are replaced to the specified language.</p>
+
+<p>See the below code example</p>
+
+<pre><code>&lt;h3&gt;label.description&lt;/h3&gt; //"label.description" is a place holder defined in ".properties" file
+&lt;p&gt;label.descriptionText&lt;/p&gt;"label.descriptionText" is a place holder defined in ".properties" file
+</code></pre>
+
+<p>This works with the Jquery Mobile framework.</p>
+
+<h3>Implementation</h3>
+
+<ul>
+<li>Create a project (sample project is found on Github for reference)</li>
+<li>Add meta tag content in the head tag
+<code>
+&lt;meta charset="UTF-8"&gt;
+</code>
+</li>
+<li>
+<p>Add the "HTMLed.js" before the Jquery Mobile framework tag</p>
+
+<pre><code>  &lt;!--HTMLed.js--&gt;
+   &lt;script type="text/javascript" charset="utf-8" src="js/HTMLed.js"&gt;&lt;/script&gt;
+
+  &lt;!--Jquery Mobile Framework--&gt;
+  &lt;script type="text/javascript" src="js/jquerymobile/jquery.mobile-1.3.1.min.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.3.1.min.css" /&gt;
+</code></pre>
+</li>
+<li>
+<p>Now open the "HTMLed.js" script, set the language preference(You can read the comments in the script file to get better understanding)</p>
+
+<pre><code>var lang = {
+autoDetect: false,//This tells the browser to detect the language preference and load ".properties" file automatically
+langPref: "fr",// if you set "autoDetect:false" you should mention the name of the ".properties" file you want to load 
+langBundle:"bundle",//folder name that contains all ".properties" files
+}
+</code></pre>
+</li>
+<li><p>Your project is good to go!!</p></li>
+</ul><h1>Important pointers on framework read it:</h1>
+
+<h3>".properties" file:</h3>
+
+<p>Its basically a <em>JSON file</em> parsed inside the framework. Hence while writing a language specific <strong>".properties"</strong> file , write it exactly as a <em>JSON file</em> otherwise your language bundle will not load properly. Strictly follow the JSON formatting.</p>
+
+<h3>What does "autoDetect" do?</h3>
+
+<p>This has to be set inside <em>"HTMLed.js"</em> file
+It is used to detect the browser specific language settings. If you set it as true, it get's the browser language settings and automatically load it for you. 
+Here is the catch when set it as <strong>"true"</strong> - You have have the <strong>".properties"</strong> file name exactly the name of the browser language returned. You can use this <a href="http://jsfiddle.net/nirus/9FVTf/">JSfiddle Link</a> to get or see the language name set for the browser. For example if it returns <strong>'en-US'</strong> your <strong>".properties"</strong> file for that specific language should be named as <strong>"en-US.properties"</strong>. The framework will load it automatically and display the page in that language as specified. This happens irrespective of <strong>"langPref"</strong> set in <em>"HTMLed.js"</em> script file.</p>
+
+<h3>What if autoDetect is false?</h3>
+
+<p>If you want to explicitly load the language irrespective of your browser settings, then make <strong>"autoDetect"</strong> to <strong>"false"</strong> in the <em>HTMLed.js file</em>. This will load the language file given in <strong>"langPref"</strong>.
+Just mention as <strong>"langPref: en-US"</strong>, this load <strong>"en-US.properties"</strong> file.</p>
+
+<h1>Support or Contact:</h1>
+
+<p>i am available on <em><a href="mailto:nirus@live.in">nirus@live.in</a></em>
+You can raise a question on <em>stackoverflow.com</em> and send the link to me, i will answer it.
+If you have any suggestion or feature enhancement or special request reach me directly or leave a comment on github.com
+Your input is valuable. I would appreciate it. Check this corner for updates on <em>HTMLed.js</em> framework.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/nirus">nirus</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
