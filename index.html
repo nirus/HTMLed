@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>HTMLed JavaScript FrameWork</h1>
-        <p>Light weight javascript framework to convert html pages to locale/Language specific pages on the fly. Written by Niranjan(Nirus)</p>
+        <p>Light weight javascript framework to convert html pages to locale/Language specific pages on the fly for Jquery Mobile. Written by Niranjan(Nirus)</p>
 
         <p class="view"><a href="https://github.com/nirus/HTMLed">View the Project on GitHub <small>nirus/HTMLed</small></a></p>
 
@@ -30,11 +30,12 @@
       <section>
         <p><img src="http://s22.postimg.org/iacur3h35/Logo.jpg" alt="HTMLed Logo"></p>
 
-<h2>HTML + Rendered = HTMLed.js</h2>
+<h2>HTML + Rendered = HTMLed.js for <strong>Jquery mobile Framework</strong>
+</h2>
 
-<p>This light weight javascript framework converts the HTML pages to language specific pages and renders it to the user on the fly. This works with tokens/Placeholder where the strings are replaced to the specified language.</p>
+<p>This light weight javascript framework that converts the <strong>Jquery Mobile HTML pages</strong> to language specific pages and renders it to the user on the fly. This works with <em>Tokens Identifiers</em> or <em>Place Holder</em> where the strings are replaced to the specified language.</p>
 
-<p>See the below code example</p>
+<p>See the below code example or checkout the <em>index.html</em> page on github</p>
 
 <pre><code>&lt;h3&gt;label.description&lt;/h3&gt; //"label.description" is a place holder defined in ".properties" file
 &lt;p&gt;label.descriptionText&lt;/p&gt;"label.descriptionText" is a place holder defined in ".properties" file
@@ -42,7 +43,7 @@
 
 <p>This works with the Jquery Mobile framework.</p>
 
-<h3>Implementation</h3>
+<h3>Implementation/Usage:</h3>
 
 <ul>
 <li>Create a project (sample project is found on Github for reference)</li>
@@ -73,22 +74,31 @@ langBundle:"bundle",//folder name that contains all ".properties" files
 </code></pre>
 </li>
 <li><p>Your project is good to go!!</p></li>
-</ul><h1>Important pointers on framework read it:</h1>
+</ul><h1>Important pointers on this framework:</h1>
 
 <h3>".properties" file:</h3>
 
 <p>Its basically a <em>JSON file</em> parsed inside the framework. Hence while writing a language specific <strong>".properties"</strong> file , write it exactly as a <em>JSON file</em> otherwise your language bundle will not load properly. Strictly follow the JSON formatting.</p>
 
-<h3>What does "autoDetect" do?</h3>
+<h3>"autoDetect" - true :</h3>
 
 <p>This has to be set inside <em>"HTMLed.js"</em> file
 It is used to detect the browser specific language settings. If you set it as true, it get's the browser language settings and automatically load it for you. 
-Here is the catch when set it as <strong>"true"</strong> - You have have the <strong>".properties"</strong> file name exactly the name of the browser language returned. You can use this <a href="http://jsfiddle.net/nirus/9FVTf/">JSfiddle Link</a> to get or see the language name set for the browser. For example if it returns <strong>'en-US'</strong> your <strong>".properties"</strong> file for that specific language should be named as <strong>"en-US.properties"</strong>. The framework will load it automatically and display the page in that language as specified. This happens irrespective of <strong>"langPref"</strong> set in <em>"HTMLed.js"</em> script file.</p>
+Here is the catch when set as <strong>"true"</strong> - You should have the <strong>".properties"</strong> file name exactly matching the name of the browser language returned. You can use this <a href="http://jsfiddle.net/nirus/9FVTf/">JSfiddle Link</a> to get or see the language name set for the browser. For example if it returns <strong>"en-US"</strong> your <strong>".properties"</strong> file for that specific language should be named as <strong>"en-US.properties"</strong>. The framework will load it automatically and display the page in that language as specified. This happens irrespective of <strong>"langPref"</strong> set in <em>"HTMLed.js"</em> script file.</p>
 
-<h3>What if autoDetect is false?</h3>
+<h3>"autoDetect" - false :</h3>
 
 <p>If you want to explicitly load the language irrespective of your browser settings, then make <strong>"autoDetect"</strong> to <strong>"false"</strong> in the <em>HTMLed.js file</em>. This will load the language file given in <strong>"langPref"</strong>.
 Just mention as <strong>"langPref: en-US"</strong>, this load <strong>"en-US.properties"</strong> file.</p>
+
+<h3>Testing in a browser:</h3>
+
+<p>While testing on <strong>Chrome</strong> you have to disable the web security. This can be done by</p>
+
+<ul>
+<li>on <strong>Windows</strong> Start-&gt;Run-&gt;type "(chrome_installation_path)\chrome.exe" --disable-web-security</li>
+<li>Now load your Jquery Mobile page in =to the chrome it will work.</li>
+</ul><p>it works fine in Firefox !!</p>
 
 <h1>Support or Contact:</h1>
 
