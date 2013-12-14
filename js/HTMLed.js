@@ -39,23 +39,6 @@ $(document).ready(function(){
 		}
 	
 	//The ".properties" file is read as a json file
-	
-	 
-// $.ajax({
-    	// url:lang.langPref,
-    	// dataType:'JSON',
-    	// 'global': false,
-    	// 'async': false,
-    	// success: function(data){
-//     	
-    	// $.each(data, function(key, val) {
-       		// var regex = new RegExp('\\b'+key.toString()+'\\b','g');
-            // $('body').html( $('body').html().replace(regex,val.toString()));	//replaces the strings in the html file
-    		// });
-      // }
-// });
-// }).trigger('refresh');	//update the page after the change
-
 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -86,5 +69,5 @@ xmlhttp.onreadystatechange = function()
     	console.log(data);
     	
     }
-  }
+  };
  });
