@@ -1,6 +1,6 @@
 
 
-/*          HTMLed.js  ver 0.1
+/*          HTMLed.js  ver 0.2
  * library written by Niranjan Kumar
  * this library requires Jquery to be loaded first
  * If you are using jquery mobile framework this script should be loaded before jquery mobile
