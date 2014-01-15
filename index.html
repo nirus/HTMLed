@@ -1,36 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>HTMLed JavaScript FrameWork by nirus</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="HTMLed JavaScript FrameWork : Light weight javascript framework to convert html pages to locale/Language specific pages on the fly for Jquery Mobile. Written by Niranjan(Nirus)" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>HTMLed JavaScript FrameWork</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>HTMLed JavaScript FrameWork</h1>
-        <p>Light weight javascript framework to convert html pages to locale/Language specific pages on the fly for Jquery Mobile. Written by Niranjan(Nirus)</p>
 
-        <p class="view"><a href="https://github.com/nirus/HTMLed">View the Project on GitHub <small>nirus/HTMLed</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nirus/HTMLed">View on GitHub</a>
 
+          <h1 id="project_title">HTMLed JavaScript FrameWork</h1>
+          <h2 id="project_tagline">Light weight javascript framework to convert html pages to locale/Language specific pages on the fly for Jquery Mobile. Written by Niranjan(Nirus)</h2>
 
-        <ul>
-          <li><a href="https://github.com/nirus/HTMLed/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/nirus/HTMLed/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/nirus/HTMLed">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nirus/HTMLed/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nirus/HTMLed/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <p><img src="http://s22.postimg.org/iacur3h35/Logo.jpg" alt="HTMLed Logo"></p>
 
-<h2>HTML + Rendered = HTMLed.js for <strong>Jquery mobile Framework</strong>
+<h2>
+<a name="html--rendered--htmledjs-for-jquery-mobile-framework" class="anchor" href="#html--rendered--htmledjs-for-jquery-mobile-framework"><span class="octicon octicon-link"></span></a>HTML + Rendered = HTMLed.js for <strong>Jquery mobile Framework</strong>
 </h2>
 
 <p>This light weight javascript framework that converts the <strong>Jquery Mobile HTML pages</strong> to language specific pages and renders it to the user on the fly. This works with <em>Tokens Identifiers</em> or <em>Place Holder</em> where the strings are replaced to the specified language.</p>
@@ -43,7 +47,8 @@
 
 <p>This works with the Jquery Mobile framework.</p>
 
-<h3>Implementation/Usage:</h3>
+<h3>
+<a name="implementationusage" class="anchor" href="#implementationusage"><span class="octicon octicon-link"></span></a>Implementation/Usage:</h3>
 
 <ul>
 <li>Create a project (sample project is found on Github for reference)</li>
@@ -64,34 +69,68 @@
 </code></pre>
 </li>
 <li>
-<p>Now open the "HTMLed.js" script, set the language preference(You can read the comments in the script file to get better understanding)</p>
+<p>Now declare global variable before "HTMLed.js" script tag, set the language preference(You can read the comments in the script file to get better understanding)</p>
 
-<pre><code>var lang = {
-autoDetect: false,//This tells the browser to detect the language preference and load ".properties" file automatically
-langPref: "fr",// if you set "autoDetect:false" you should mention the name of the ".properties" file you want to load 
-langBundle:"bundle",//folder name that contains all ".properties" files
-}
+<pre><code>&lt;script&gt;
+var global = {
+          options : {
+                     autoDetect: false,  
+                     langPref: "fr",     
+                     langBundle:"bundle",                  
+            }
+        };
+    &lt;/script&gt;
+    &lt;script type="text/javascript" charset="utf-8" src="js/HTMLed.js"&gt;&lt;/script&gt;
 </code></pre>
 </li>
 <li><p>Your project is good to go!!</p></li>
-</ul><h1>Important pointers on this framework:</h1>
+</ul><h1>
+<a name="for-external-html-pages" class="anchor" href="#for-external-html-pages"><span class="octicon octicon-link"></span></a>For External HTML pages</h1>
 
-<h3>".properties" file:</h3>
+<ul>
+<li>
+<p>call "window.HTMLed" with the options as parameter to the method as shown below</p>
+
+<pre><code>window.HTMLed({
+       externalPage : "popup.html",
+       options : {
+                  autoDetect: false,  
+                  langPref: "fr",    
+                  langBundle:"bundle", 
+                 },
+       callBack:function(parsed){
+                                 $('#popup-container').html(parsed);
+                                 $('#popup-wrapper').popup("open", { transition: "pop" }); 
+                                }                                            
+            });
+</code></pre>
+
+<p><strong>the above option illustrates the example of loading external HTML page as popup</strong></p>
+</li>
+<li><p>Callback in the parameter provides you the flexibility to use the parsed HTML the way you want to implement.</p></li>
+</ul><h1>
+<a name="important-pointers-on-this-framework" class="anchor" href="#important-pointers-on-this-framework"><span class="octicon octicon-link"></span></a>Important pointers on this framework:</h1>
+
+<h3>
+<a name="properties-file" class="anchor" href="#properties-file"><span class="octicon octicon-link"></span></a>".properties" file:</h3>
 
 <p>Its basically a <em>JSON file</em> parsed inside the framework. Hence while writing a language specific <strong>".properties"</strong> file , write it exactly as a <em>JSON file</em> otherwise your language bundle will not load properly. Strictly follow the JSON formatting.</p>
 
-<h3>"autoDetect" - true :</h3>
+<h3>
+<a name="autodetect---true-" class="anchor" href="#autodetect---true-"><span class="octicon octicon-link"></span></a>"autoDetect" - true :</h3>
 
 <p>This has to be set inside <em>"HTMLed.js"</em> file
 It is used to detect the browser specific language settings. If you set it as true, it get's the browser language settings and automatically load it for you. 
 Here is the catch when set as <strong>"true"</strong> - You should have the <strong>".properties"</strong> file name exactly matching the name of the browser language returned. You can use this <a href="http://jsfiddle.net/nirus/9FVTf/">JSfiddle Link</a> to get or see the language name set for the browser. For example if it returns <strong>"en-US"</strong> your <strong>".properties"</strong> file for that specific language should be named as <strong>"en-US.properties"</strong>. The framework will load it automatically and display the page in that language as specified. This happens irrespective of <strong>"langPref"</strong> set in <em>"HTMLed.js"</em> script file.</p>
 
-<h3>"autoDetect" - false :</h3>
+<h3>
+<a name="autodetect---false-" class="anchor" href="#autodetect---false-"><span class="octicon octicon-link"></span></a>"autoDetect" - false :</h3>
 
 <p>If you want to explicitly load the language irrespective of your browser settings, then make <strong>"autoDetect"</strong> to <strong>"false"</strong> in the <em>HTMLed.js file</em>. This will load the language file given in <strong>"langPref"</strong>.
 Just mention as <strong>"langPref: en-US"</strong>, this load <strong>"en-US.properties"</strong> file.</p>
 
-<h3>Testing in a browser:</h3>
+<h3>
+<a name="testing-in-a-browser" class="anchor" href="#testing-in-a-browser"><span class="octicon octicon-link"></span></a>Testing in a browser:</h3>
 
 <p>While testing on <strong>Chrome</strong> you have to disable the web security. This can be done by</p>
 
@@ -100,19 +139,25 @@ Just mention as <strong>"langPref: en-US"</strong>, this load <strong>"en-US.pro
 <li>Now load your Jquery Mobile page in =to the chrome it will work.</li>
 </ul><p>it works fine in Firefox !!</p>
 
-<h1>Support or Contact:</h1>
+<h1>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact:</h1>
 
 <p>i am available on <em><a href="mailto:nirus@live.in">nirus@live.in</a></em>
 You can raise a question on <em>stackoverflow.com</em> and send the link to me, i will answer it.
 If you have any suggestion or feature enhancement or special request reach me directly or leave a comment on github.com
 Your input is valuable. I would appreciate it. Check this corner for updates on <em>HTMLed.js</em> framework.</p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/nirus">nirus</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">HTMLed JavaScript FrameWork maintained by <a href="https://github.com/nirus">nirus</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
+
   </body>
 </html>
