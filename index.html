@@ -116,14 +116,13 @@ var global = {
 <h3>
 <a name="autodetect---true-" class="anchor" href="#autodetect---true-"><span class="octicon octicon-link"></span></a>"autoDetect" - true :</h3>
 
-<p>This has to be set inside <em>"HTMLed.js"</em> file
-It is used to detect the browser specific language settings. If you set it as true, it get's the browser language settings and automatically load it for you. 
-Here is the catch when set as <strong>"true"</strong> - You should have the <strong>".properties"</strong> file name exactly matching the name of the browser language returned. You can use this <a href="http://jsfiddle.net/nirus/9FVTf/">JSfiddle Link</a> to get or see the language name set for the browser. For example if it returns <strong>"en-US"</strong> your <strong>".properties"</strong> file for that specific language should be named as <strong>"en-US.properties"</strong>. The framework will load it automatically and display the page in that language as specified. This happens irrespective of <strong>"langPref"</strong> set in <em>"HTMLed.js"</em> script file.</p>
+<p>It is used to detect the browser specific language settings. If you set it as true, it get's the browser language settings and automatically load it for you. 
+Here is the catch when set as <strong>"true"</strong> - You should have the <strong>".properties"</strong> file name exactly matching the name of the browser language returned. You can use this <a href="http://jsfiddle.net/nirus/9FVTf/">JSfiddle Link</a> to get or see the language name set for the browser. For example if it returns <strong>"en-US"</strong> your <strong>".properties"</strong> file for that specific language should be named as <strong>"en-US.properties"</strong>. The framework will load it automatically and display the page in that language as specified.</p>
 
 <h3>
 <a name="autodetect---false-" class="anchor" href="#autodetect---false-"><span class="octicon octicon-link"></span></a>"autoDetect" - false :</h3>
 
-<p>If you want to explicitly load the language irrespective of your browser settings, then make <strong>"autoDetect"</strong> to <strong>"false"</strong> in the <em>HTMLed.js file</em>. This will load the language file given in <strong>"langPref"</strong>.
+<p>If you want to explicitly load the language irrespective of your browser settings, then make <strong>"autoDetect"</strong> to <strong>"false"</strong> in the <em>Global variable</em>. This will load the language file given in <strong>"langPref"</strong>.
 Just mention as <strong>"langPref: en-US"</strong>, this load <strong>"en-US.properties"</strong> file.</p>
 
 <h3>
