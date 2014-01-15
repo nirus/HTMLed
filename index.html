@@ -14,6 +14,16 @@
         
         <!--Jquery Framework-->
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script>
+        //Declrations before load HTMLed.js
+        	var global = {
+                 options : {
+                    autoDetect: false,  //This tells the browser to detect the language preference and load ".properties" file automatically
+                    langPref: "fr",     // if you set "autoDetect:false" you should mention the name of the ".properties" file you want to load 
+                    langBundle:"bundle",//folder name that contains all ".properties" files                    
+                }
+            };
+        </script>
         <script type="text/javascript" charset="utf-8" src="js/HTMLed.js"></script>
         
         <!-- Important note: you have to use HTMLed.js before Jquerymobile framework to work correctly.
@@ -26,6 +36,23 @@
         <!--Jquery Mobile Framework-->
         <script type="text/javascript" src="js/jquerymobile/jquery.mobile-1.3.1.min.js"></script>
         <link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.3.1.min.css" />
+        <script>
+        //Thanks to Tim Smith
+		    $(document).on("click", '#showPopup', function(event) {        		     
+		        window.HTMLed({
+			            externalPage : "popup.html",
+			            options : {
+			                        autoDetect: false,  //This tells the browser to detect the language preference and load ".properties" file automatically
+			                        langPref: "fr",     // if you set "autoDetect:false" you should mention the name of the ".properties" file you want to load 
+			                        langBundle:"bundle",//folder name that contains all ".properties" files                    
+			                      },
+			            callBack:function(parsed){
+			                $('#popup-container').html(parsed);
+			                $('#popup-wrapper').popup("open", { transition: "pop" }); // the jQuery Popup opens    
+			              }                                            
+		        });           
+		    });
+        </script>
       
         <title>Home Screen</title>
 </head>
@@ -85,6 +112,7 @@
         <div data-role="content" data-theme="c">
             <p><a href="#one" data-role="button" data-theme="a">label.ok (I am ok)</a></p>    
             <p><a href="#one" data-role="button" data-theme="a" data-transition="flip">label.back (Go back)</a></p>
+            <div data-role="button" id="showPopup"> Show Popup</div>
             </div>
     </div><!-- /content -->
     
@@ -92,7 +120,9 @@
         <h4>label.footer</h4>
     </div><!-- /footer -->
     
-    
+    <div data-role="popup" id="popup-wrapper" class="ui-content">
+    <div id="popup-container"></div>
+	</div>
 </div><!-- /page two -->
 
 </body>
