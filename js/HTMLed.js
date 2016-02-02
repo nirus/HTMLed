@@ -88,7 +88,7 @@
             })            
         }else{
             if(global.options){
-                path = global.options.langBundle + '/' + global.options.langPref;
+                path = global.options.langBundle || $global.get().langBundle + '/' + global.options.langPref;
             }else{
                 path = $global.get().langBundle + '/' + $global.get().langPref;
             }

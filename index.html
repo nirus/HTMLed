@@ -41,7 +41,10 @@
         //Thanks to Tim Smith
 		    $(document).on("click", '#showPopup', function(event) {        		     
 		        $.HTMLed({
-			            externalPage : "popup.html",			           
+			            externalPage : "popup.html",
+                        options : {                          
+                          langPref: "en"
+                         },		           
 			            callBack:function(parsed){
 			                $('#popup-container').html(parsed);
 			                $('#popup-wrapper').popup("open", { transition: "pop" }); // the jQuery Popup opens    
