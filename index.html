@@ -14,17 +14,18 @@
         
         <!--Jquery Framework-->
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/HTMLed.js" data-config="lang.json"></script>
         <script>
         //Declrations before load HTMLed.js
-        	var global = {
+        	/*var global = {
                  options : {
                     autoDetect: false,  //This tells the browser to detect the language preference and load ".properties" file automatically
                     langPref: "fr",     // if you set "autoDetect:false" you should mention the name of the ".properties" file you want to load 
                     langBundle:"bundle",//folder name that contains all ".properties" files                    
                 }
-            };
+            };*/           
         </script>
-        <script type="text/javascript" charset="utf-8" src="js/HTMLed.js"></script>
+       
         
         <!-- Important note: you have to use HTMLed.js before Jquerymobile framework to work correctly.
             As HTMLed.js registers in document.ready event to parse the HTML file to locale specific language
@@ -39,19 +40,21 @@
         <script>
         //Thanks to Tim Smith
 		    $(document).on("click", '#showPopup', function(event) {        		     
-		        window.HTMLed({
-			            externalPage : "popup.html",
-			            options : {
-			                        autoDetect: false,  //This tells the browser to detect the language preference and load ".properties" file automatically
-			                        langPref: "fr",     // if you set "autoDetect:false" you should mention the name of the ".properties" file you want to load 
-			                        langBundle:"bundle",//folder name that contains all ".properties" files                    
-			                      },
+		        $.HTMLed({
+			            externalPage : "popup.html",			           
 			            callBack:function(parsed){
 			                $('#popup-container').html(parsed);
 			                $('#popup-wrapper').popup("open", { transition: "pop" }); // the jQuery Popup opens    
 			              }                                            
 		        });           
 		    });
+
+            //This load the french page to English one
+            $(document).on("click", '#reload', function(event) {                  
+                $.HTMLed.rePage({
+                    langPref:"en"
+                });           
+            });
         </script>
       
         <title>Home Screen</title>
@@ -112,8 +115,9 @@
         <div data-role="content" data-theme="c">
             <p><a href="#one" data-role="button" data-theme="a">label.ok (I am ok)</a></p>    
             <p><a href="#one" data-role="button" data-theme="a" data-transition="flip">label.back (Go back)</a></p>
-            <div data-role="button" id="showPopup"> Show Popup</div>
-            </div>
+            <div data-role="button" id="showPopup">label.showPopUp</div>
+            <div data-role="button" id="reload"> Reload in English</div>
+        </div>
     </div><!-- /content -->
     
     <div data-role="footer" data-position="fixed" data-theme="d">
