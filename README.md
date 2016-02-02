@@ -1,5 +1,7 @@
 - For detailed documentation: http://nirus.github.io/HTMLed/
 - Sync the project locally and run in chrome browser. Refer documentation link for brief explanation.
+- Production Build(Non-minified):
+  https://github.com/nirus/HTMLed/blob/master/js/HTMLed.js
 
 ###Thanks to
 
