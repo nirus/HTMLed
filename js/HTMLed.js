@@ -67,7 +67,7 @@
         var path;
 
         //Check if the global option is defined
-        if ((global == undefined) && (global == null)) {
+        if ((global == undefined) || (global == null)) {
             console.error("Define configuration");
             return;
         }
